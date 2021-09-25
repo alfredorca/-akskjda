@@ -16,6 +16,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomeView} />
           <Route exact path="/aboutus" component={AboutUsView} />
+          <Route exact path="/coins/:id" component={SingleCoinView} />
         </Switch>
       </BrowserRouter>
     </>
