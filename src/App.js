@@ -5,6 +5,10 @@ import "./App.css";
 import SideBar from "./Components/SideBar";
 import axios from "axios";
 import Coin from "./Views/Coin";
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import './App.css';
+import SideBar from './Components/SideBar';
+import AboutUsView from './Views/AboutUsView';
 
 //Import Views
 import HomeView from "./Views/HomeView";
@@ -59,6 +63,14 @@ function App() {
           />
         );
       })}
+
+    <SideBar/>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path = "/" component={HomeView}/>
+        <Route exact path = "/aboutus" component={AboutUsView}/>
+      </Switch>
+    </BrowserRouter>
     </>
   );
 }
