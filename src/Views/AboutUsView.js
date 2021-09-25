@@ -1,6 +1,4 @@
-import { height } from "@mui/system";
 import { AboutUsData } from "../Components/AboutUsData";
-let alfredosPicture = "../images/Alfredo.jpg";
 
 const AboutUsView = () => {
   return (
@@ -18,6 +16,8 @@ const AboutUsView = () => {
               }}
             ></div>
             <div className="name">{person.name}</div>
+            <div className="age">Age: {person.age}</div>
+            <div className="description">{person.description}</div>
           </div>
         ))}
       </div>

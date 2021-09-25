@@ -2,7 +2,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import SideBar from "./Components/SideBar";
-import "./App.css";
+// import "./App.css";
 import AboutUsView from "./Views/AboutUsView";
 
 //Import Views
