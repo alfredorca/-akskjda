@@ -5,10 +5,8 @@ import "./App.css";
 import SideBar from "./Components/SideBar";
 import axios from "axios";
 import Coin from "./Views/Coin";
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import './App.css';
-import SideBar from './Components/SideBar';
-import AboutUsView from './Views/AboutUsView';
+import "./App.css";
+import AboutUsView from "./Views/AboutUsView";
 
 //Import Views
 import HomeView from "./Views/HomeView";
@@ -39,38 +37,14 @@ function App() {
 
   return (
     <>
-      <>
-        <SideBar />
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={HomeView} />
-            {/* <Route exact path = "/" component={HomeView}/> */}
-          </Switch>
-        </BrowserRouter>
-      </>
-      {filteredCoins.map((coin) => {
-        console.log(coin);
-        return (
-          <Coin
-            key={coin.id}
-            name={coin.name}
-            image={coin.image}
-            symbol={coin.symbol}
-            volume={coin.total_volume}
-            price={coin.current_price}
-            priceChange={coin.price_change_percentage_24h}
-            marketcap={coin.market_cap}
-          />
-        );
-      })}
-
-    <SideBar/>
-    <BrowserRouter>
-      <Switch>
-        <Route exact path = "/" component={HomeView}/>
-        <Route exact path = "/aboutus" component={AboutUsView}/>
-      </Switch>
-    </BrowserRouter>
+      <SideBar />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={HomeView} />
+          <Route exact path="/aboutus" component={AboutUsView} />
+          {/* <Route exact path = "/" component={HomeView}/> */}
+        </Switch>
+      </BrowserRouter>
     </>
   );
 }

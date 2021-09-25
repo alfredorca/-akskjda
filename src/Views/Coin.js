@@ -10,7 +10,7 @@ const Coin = ({
   marketcap,
 }) => {
   return (
-    <div>
+    <div className='coins'>
       <h1>{name}</h1>
       <p>{symbol}</p>
       <img src={image} alt="crypto" />
