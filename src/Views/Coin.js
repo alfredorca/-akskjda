@@ -1,28 +1,61 @@
 import React from "react";
+import { Paper } from "@mui/material";
 
-const Coin = ({
-  name,
-  image,
-  symbol,
-  price,
-  volume,
-  priceChange,
-  marketcap,
-}) => {
+const Coin = ({ coin }) => {
   return (
-    <div className='coins'>
-      <h1>{name}</h1>
-      <p>{symbol}</p>
-      <img src={image} alt="crypto" />
-      <p>${price.toLocaleString()}</p>
-      <p>${volume.toLocaleString()}</p>
-      {priceChange < 0 ? (
-        <p>{priceChange.toFixed(2)}%</p>
-      ) : (
-        <p>{priceChange.toFixed(2)}%</p>
-      )}
-      <p>${marketcap.toLocaleString()}</p>
-    </div>
+    <Paper elevation={2} className="card">
+      <div className="card-top">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              background: `url(${coin.image})`,
+              backgroundSize: "cover",
+              height: "35px",
+              width: "35px",
+            }}
+          ></div>
+          <div className="card-name">{coin.name}</div>
+        </div>
+      </div>
+      <div className="card-bottom">
+        <div className="card-row">
+          <div className="card-text title">price</div>
+          <div className="card-text reg">{coin.current_price}</div>
+        </div>
+        <div className="card-row">
+          <div className="card-text title">todays high</div>
+          <div className="card-text reg">{coin.high_24h}</div>
+        </div>
+        <div className="card-row">
+          <div className="card-text title">symbol</div>
+          <div className="card-text reg">{coin.symbol}</div>
+        </div>
+      </div>
+    </Paper>
+
+    // <div className="coins">
+    //   <a href={`/coins/${id}`}>
+    //     <h1>{name}</h1>
+    //   </a>
+    //   <p>{symbol}</p>
+    //   <a href={`/coins/${id}`}>
+    //     <img src={image} alt="crypto" />
+    //   </a>
+    //   <p>${price.toLocaleString()}</p>
+    //   <p>${volume.toLocaleString()}</p>
+    //   {priceChange < 0 ? (
+    //     <p>{priceChange.toFixed(2)}%</p>
+    //   ) : (
+    //     <p>{priceChange.toFixed(2)}%</p>
+    //   )}
+    //   <p>${marketcap.toLocaleString()}</p>
+    // </div>
   );
 };
 

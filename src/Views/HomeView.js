@@ -26,24 +26,13 @@ const HomeView = () => {
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
   return (
-   <>
-    {filteredCoins.map((coin) => {
-      console.log(coin);
-      return (
-        <Coin
-          key={coin.id}
-          name={coin.name}
-          image={coin.image}
-          symbol={coin.symbol}
-          volume={coin.total_volume}
-          price={coin.current_price}
-          priceChange={coin.price_change_percentage_24h}
-          marketcap={coin.market_cap}
-        />
-      );
-    })}
-    </>
-  )
-}
+    <div className="card-container">
+      {filteredCoins.map((coin) => {
+        console.log(coin);
+        return <Coin coin={coin} />;
+      })}
+    </div>
+  );
+};
 
 export default HomeView;
