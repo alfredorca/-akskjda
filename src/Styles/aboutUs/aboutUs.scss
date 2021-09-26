@@ -1,16 +1,13 @@
 .container {
-  width: 100vw;
-  padding: 10vh 10vw 0 10vw;
-  background-color: rgb(73, 82, 92);
-  margin-right: 0vw;
-  margin-bottom: 0;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  background-color: $BACKGROUND_COLOR;
 }
 
-
 .singlePerson {
-  margin-left: 3vw;
-  margin-bottom: 4vh ;
+
+  margin-left: 200px;
+  margin-bottom: 4vh;
 }
 
 .picture {
