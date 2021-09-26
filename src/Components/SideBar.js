@@ -6,32 +6,32 @@ const SideBar = () => {
       {SideBarData.map((val, key) => (
         <div>
           {val.title === "Crypto Sherk" ? (
-            <div className='SherkGrid'>
-            <div className="icon">{val.icon}</div>
+            <div className="SherkGrid">
+              <div className="icon">{val.icon}</div>
               <div key={key} id="sherkTitle">
                 {" "}
-                {val.title}{" "}
+                {val.title}
               </div>
             </div>
           ) : (
-        <ul>
-            <li
-              key={key}
-              onClick={() => {
-                window.location.pathname = val.link;
-              }}
-              id={window.location.pathname === val.link ? "active" : ""}
-            >
-              <div className="icon">{val.icon}</div>
+            <ul>
+              <li
+                key={key}
+                onClick={() => {
+                  window.location.pathname = val.link;
+                }}
+                id={window.location.pathname === val.link ? "active" : ""}
+              >
+                <div className="icon">{val.icon}</div>
 
-              <div className="title">{val.title}</div>
-            </li>
-        </ul>
+                <div className="title">{val.title}</div>
+              </li>
+            </ul>
           )}
         </div>
       ))}
     </div>
   );
-}
+};
 
 export default SideBar;

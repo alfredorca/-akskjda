@@ -1,4 +1,6 @@
 import Paper from "@mui/material/Paper";
+import News from "../Components/News";
+import { newsData } from "./newsData";
 
 const SingleView = ({ coin }) => {
   return (
@@ -44,6 +46,8 @@ const SingleView = ({ coin }) => {
           <div className="header-container">
             <div className="text three">News</div>
           </div>
+
+          <News />
         </Paper>
       </div>
       <div className="single-view-section right">

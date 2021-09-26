@@ -2,6 +2,7 @@ import axios from "axios";
 import Coin from "./Coin";
 import Banner from "../Components/Banner";
 import { useState, useEffect } from "react";
+import { filter } from "dom-helpers";
 
 const HomeView = () => {
   const [coins, setCoins] = useState([]);
@@ -19,26 +20,77 @@ const HomeView = () => {
       .catch((error) => alert("error"));
   }, []);
 
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
   const filteredCoins = coins.filter((coin) =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
 
   const featuredCoins = filteredCoins.slice(0, 3);
+
+  console.log(featuredCoins.length);
+  console.log(filteredCoins.length);
   return (
-    <div>
+    <div className="home-main">
       <Banner />
-      <div className="card-container">
-        {featuredCoins.map((coin) => {
-          return <Coin featured={true} coin={coin} />;
-        })}
+      <div
+        style={{
+          marginLeft: "200px",
+          marginTop: "50px",
+          display: "flex",
+          justifyContent: "center",
+          width: "auto",
+        }}
+      >
+        <form>
+          <input
+            style={{
+              width: "500px",
+              borderRadius: "15px",
+              border: "none",
+              outline: "none",
+              height: "20px",
+              padding: "25px",
+            }}
+            type="text"
+            placeholder="Search Crypto"
+            className="coin-input"
+            onChange={handleChange}
+          />
+        </form>
       </div>
 
-      <div className="card-container">
-        {filteredCoins.map((coin, idx) => {
-          if (idx < 3) return;
-          return <Coin featured={false} coin={coin} />;
-        })}
-      </div>
+      {filteredCoins.length === 0 && featuredCoins.length === 0 ? (
+        <div
+          style={{
+            marginLeft: "200px",
+            marginTop: "50px",
+            display: "flex",
+            justifyContent: "center",
+            width: "auto",
+            fontFamily: "Poppins",
+          }}
+        >
+          No coin matches your search
+        </div>
+      ) : (
+        <>
+          <div className="card-container">
+            {featuredCoins.map((coin) => {
+              return <Coin key={coin.id} featured={true} coin={coin} />;
+            })}
+          </div>
+
+          <div className="card-container">
+            {filteredCoins.map((coin, idx) => {
+              if (idx < 3) return;
+              return <Coin key={coin.id} featured={false} coin={coin} />;
+            })}
+          </div>
+        </>
+      )}
     </div>
   );
 };

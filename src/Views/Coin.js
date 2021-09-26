@@ -19,7 +19,7 @@ const Coin = ({ featured, coin }) => {
         >
           <div
             style={{
-              background: `url(${coin.image})`,
+              backgroundImage: `url(${coin.image})`,
               backgroundSize: "cover",
               height: "35px",
               width: "35px",
