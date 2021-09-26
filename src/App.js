@@ -4,6 +4,7 @@ import "./App.css";
 import SideBar from "./Components/SideBar";
 // import "./App.css";
 import AboutUsView from "./Views/AboutUsView";
+import SingleCoinView from './Views/SingleCoinView'
 
 //Import Views
 import HomeView from "./Views/HomeView";
