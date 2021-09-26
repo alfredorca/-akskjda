@@ -14,4 +14,4 @@ const CarouselComponent = () => {
   );
 };
 
-export default CarouselComponent;
+export default CarouselComponent; 
