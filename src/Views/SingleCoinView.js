@@ -23,7 +23,6 @@ console.log(coin)
 
   return (
     <>
-    
     {coin &&
   (<div style={{marginLeft: '300px'}}>
      <h2>{coin.name}</h2>
