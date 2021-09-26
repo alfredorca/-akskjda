@@ -4,6 +4,9 @@ import Banner from "../Components/Banner";
 import { useState, useEffect } from "react";
 import { filter } from "dom-helpers";
 
+import CarouselComponent from "../Components/CarouselComponent";
+
+
 const HomeView = () => {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
@@ -91,7 +94,16 @@ const HomeView = () => {
           </div>
         </>
       )}
+<>
+
+    <CarouselComponent/>
+    <div className="card-container">
+      {filteredCoins.map((coin) => {
+        console.log(coin);
+        return <Coin coin={coin} />;
+      })}
     </div>
+    </>
   );
 };
 
