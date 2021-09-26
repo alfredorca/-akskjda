@@ -94,16 +94,16 @@ const HomeView = () => {
           </div>
         </>
       )}
-<>
-
-    <CarouselComponent/>
+    
+    
     <div className="card-container">
       {filteredCoins.map((coin) => {
         console.log(coin);
         return <Coin coin={coin} />;
       })}
     </div>
-    </>
+    </div>
+    
   );
 };
 
