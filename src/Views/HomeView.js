@@ -1,6 +1,7 @@
 import axios from "axios";
 import Coin from "./Coin";
 import { useState, useEffect } from "react";
+import CarouselComponent from "../Components/CarouselComponent";
 
 const HomeView = () => {
   const [coins, setCoins] = useState([]);
@@ -26,12 +27,16 @@ const HomeView = () => {
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
   return (
+<>
+
+    <CarouselComponent/>
     <div className="card-container">
       {filteredCoins.map((coin) => {
         console.log(coin);
         return <Coin coin={coin} />;
       })}
     </div>
+    </>
   );
 };
 
