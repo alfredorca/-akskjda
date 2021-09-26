@@ -20,6 +20,17 @@
   }
 }
 
+.featured-card {
+  height: 200px;
+  width: 300px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .card-top {
   height: 50%;
   display: flex;

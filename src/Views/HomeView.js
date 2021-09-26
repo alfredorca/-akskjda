@@ -1,5 +1,6 @@
 import axios from "axios";
 import Coin from "./Coin";
+import Banner from "../Components/Banner";
 import { useState, useEffect } from "react";
 
 const HomeView = () => {
@@ -18,19 +19,26 @@ const HomeView = () => {
       .catch((error) => alert("error"));
   }, []);
 
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
-
   const filteredCoins = coins.filter((coin) =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
+
+  const featuredCoins = filteredCoins.slice(0, 3);
   return (
-    <div className="card-container">
-      {filteredCoins.map((coin) => {
-        console.log(coin);
-        return <Coin coin={coin} />;
-      })}
+    <div>
+      <Banner />
+      <div className="card-container">
+        {featuredCoins.map((coin) => {
+          return <Coin featured={true} coin={coin} />;
+        })}
+      </div>
+
+      <div className="card-container">
+        {filteredCoins.map((coin, idx) => {
+          if (idx < 3) return;
+          return <Coin featured={false} coin={coin} />;
+        })}
+      </div>
     </div>
   );
 };
