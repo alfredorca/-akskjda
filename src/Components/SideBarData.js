@@ -7,26 +7,11 @@ import CryptoSherk from "./CryptoSherk";
 export const SideBarData = [
   {
     title: "Crypto Sherk",
-    icon:<CryptoSherk/>,
+    icon: <CryptoSherk />,
   },
   {
     title: "Home",
     icon: <HomeIcon />,
     link: "/",
-  },
-  {
-    title: "About us",
-    icon: <ContactPageIcon />,
-    link: "/aboutus",
-  },
-  {
-    title: "Crypto",
-    icon: <MonetizationOnIcon />,
-    link: "/crypto",
-  },
-  {
-    title: "Forum",
-    icon: <ChatIcon />,
-    link: "/forum",
   },
 ];

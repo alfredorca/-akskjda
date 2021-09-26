@@ -13,13 +13,11 @@ export const AboutUsData = [
   },
   {
     name: "Kevin Rodriguez",
-    age: 31,
     description: "",
     picture: "/images/Kevin Rodriguez.png",
   },
   {
     name: "Scott Stossel",
-    age: 24,
     description: "",
     picture: "/images/Scott Stossel.png",
   },
